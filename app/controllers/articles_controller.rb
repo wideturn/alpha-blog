@@ -6,8 +6,18 @@ class ArticlesController < ApplicationController
   def create
     #Display what is being passed on Submit
   #  render plain: params[:article].inspect
-    @article = Article.new(article_params)
-    @article.save
+     @article = Article.new(article_params)
+    if @article.save
+      redirect_to article_path(@article)
+      flash[:notice] = "Article was successfully created"
+    else
+      render 'new'
+    end
+
+  end
+
+  def show
+    @article = Article.find(params[:id])
   end
 
   private
