@@ -1,3 +1,7 @@
+<p>
+  <%= link_to "All articles", articles_path %>
+</p>
+
 <h1>Showing selected Article</h1>
 
 <p>
@@ -7,3 +11,6 @@
 <p>
   Description: <%= @article.description %>
 </p>
+
+<%= link_to "Edit this article", edit_article_path(@article) %> |
+<%= link_to "Edit this article", edit_article_path(@article) %>
