@@ -2,27 +2,9 @@
   <%= link_to "All articles", articles_path %>
 </p>
 
-<h1>Edit existing Article</h1>
 
-<% if @article.errors.any? %>
-  <h2> Artcle not updated because: </h2>
-  <ul>
-    <% @article.errors.full_messages.each do |err| %>
-      <li> <%= err %> </li>
-    <% end %>
-  </ul>
-<% end %>
+<!--
+Use the name (and path if outside default directory) of the partial/view minus the '_'
+  -->
 
-<%= form_for @article do |f| %>
-  <p>
-    <%= f.label :title %> <br>
-    <%= f.text_field :title%>
-  </p>
-  <p>
-    <%= f.label :description %> <br>
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<%= render 'form' %>
